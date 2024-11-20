@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+
+    --Font-size: 14px;
+    --font-weight-1: 500;
+    --font-weight-2: 700;
+
+    --font-1: "Montserrat", sans-serif;
+    --font-2: "Fraunces", serif;
+}
+
+body{
+    background-color: var(--Cream);
+    font-size: var(--Font-size);
+    font-family: var(--font-1);
+    color: var(--Dark-grayish-blue);
+    font-weight: var(--font-weight-1);
+
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+
+    margin: 0;
+}
+.carta{
+    position: absolute;
+    max-width:700px;
+    display: grid;
+    
+    margin: auto;
+    border-radius: 20px 20px 0 0 ; 
+    background-color: var(--White); 
+} 
+.carta-izquierda{
+    width: 100%;
+    height: 100%;
+}
+.imagen{
+    width: 100%;
+    height: 100%;
+    margin: 0 0 10px 0;
+    border-radius: 20px 20px 0 0 ;
+}
+.carta-derecha{
+    margin-top: 15px;
+    padding: 0 30px;  
+    padding-bottom: 20px; 
+}
+
+.perfume{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 8px;
+}
+.carta-derecha h1{
+    margin-top: 0;
+    font-size: 32px;
+    line-height: 38px;
+    font-family: var(--font-2);
+    font-weight: var(--font-weight-2);
+    color: #000;
+}
+.prcios{
+    display: flex;
+    width: 230px;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}
+.precio1{
+    font-family: var(--font-2);
+    font-size: 40px;
+    font-weight: var(--font-weight-2);
+    color: var(--Dark-cyan);
+}
+.precio2{
+    text-decoration: line-through;
+}
+button{
+    width: 100%;
+    height: 45px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--Dark-cyan);
+    color: var(--White);
+    font-size: var(--Font-size);
+    font-family: var(--font-1);
+    font-weight: var(--font-weight-1);
+}
+button img{
+    margin-right: 10px;
+}
+
+@media (min-width: 600px) {
+    .carta {
+        max-width: 600px;
+        grid-template-columns: 1fr 1fr;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .imagen{
+        border-radius: 0;
+    }
+    .carta-derecha{
+        padding-top: 15px;
+    }
+    .perfume{
+        margin-bottom: 15px;
+    }
+    .carta-derecha h1{
+        font-size: 35px;
+        font-weight: var(--font-weight-2);
+        line-height: 40px;
+    }
+    .texto-abajo{
+        font-size: 15px;
+        line-height: 22px;
+    }
+    button{
+        height: 50px;
+        font-size: 18px;
+    }
+}
