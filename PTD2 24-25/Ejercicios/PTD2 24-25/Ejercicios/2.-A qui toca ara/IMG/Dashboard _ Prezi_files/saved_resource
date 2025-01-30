@@ -1,0 +1,223 @@
+
+
+'use strict';
+{
+  const globals = this;
+  const django = globals.django || (globals.django = {});
+
+  
+  django.pluralidx = function(n) {
+    const v = (n != 1);
+    if (typeof v === 'boolean') {
+      return v ? 1 : 0;
+    } else {
+      return v;
+    }
+  };
+  
+
+  /* gettext library */
+
+  django.catalog = django.catalog || {};
+  
+  const newcatalog = {
+    " if the problem persists.": "si el problema contin\u00faa.",
+    "%(total_count)s result": [
+      "%(total_count)s resultado",
+      "%(total_count)s resultados"
+    ],
+    "An e-mail was sent. Waiting for person to sign up": "Se envi\u00f3 un email a esta persona. Esperando a que se registre",
+    "An unexpected error occurred. Please try again.": "Se ha producido un error inesperado. Prueba de nuevo.",
+    "Anyone can save<br/> a copy of this prezi": "Cualquiera puede guardar<br/> una copia del prezi",
+    "Are you sure you want to remove yourself from this folder?": "\u00bfSeguro que deseas eliminarte de esta carpeta?",
+    "Copied!": "\u00a1Copiado!",
+    "Copy of %(title)s": "Copia de %(title)s",
+    "Copying presentation": "Copiando presentaci\u00f3n",
+    "Created by me": "Creadas por m\u00ed",
+    "Credit card is expired": "La tarjeta de cr\u00e9dito est\u00e1 caducada",
+    "Downloading a presentation is available in the Prezi Next desktop app": "La descarga de presentaciones est\u00e1 disponible en la app de escritorio de Prezi Next",
+    "Duplication unsuccessful": "Duplicaci\u00f3n incorrecta",
+    "E-mail sent": "Correo enviado",
+    "Error adding collaborator": "Error al agregar colaborador",
+    "Error adding member. Please try again later": "Error al agregar miembro. Vuelve a intentarlo pasados unos minutos.",
+    "Error changing collaborator's permission": "Error al cambiar los permisos del colaborador",
+    "Error during generating embed code": "Error al generar el c\u00f3digo de inserci\u00f3n",
+    "Error during saving privacy level": "Error al guardar el nivel de privacidad",
+    "Error removing collaborator": "Error al eliminar colaborador",
+    "Folder with the same name exists.": "Existe una carpeta con el mismo nombre.",
+    "Hidden": "Oculto",
+    "Invalid email address": "Direcci\u00f3n electr\u00f3nica no v\u00e1lida",
+    "Only those added to the prezi can view or edit.": "Solo los colaboradores que se han agregado al prezi pueden ver o editar.",
+    "Only those added to the prezi can view or edit. Anyone with the link can view.": "Solo los colaboradores que se han agregado al prezi pueden ver o editar. Cualquier usuario que tenga el enlace puede ver.",
+    "Please enter a password": "Escribe una contrase\u00f1a",
+    "Please enter a valid credit card number": "Escribe un n\u00famero de tarjeta de cr\u00e9dito v\u00e1lido",
+    "Please enter a valid email address": "Escribe una direcci\u00f3n de email v\u00e1lida",
+    "Please enter an email address": "Escribe una direcci\u00f3n de email",
+    "Please enter at least {0} characters": "Escribe al menos {0} caracteres",
+    "Please enter at least {0} digits": "Utiliza al menos {0} d\u00edgitos",
+    "Please enter no more than {0} digits": "No utilices m\u00e1s de {0} d\u00edgitos",
+    "Please enter only digits": "Utiliza solo d\u00edgitos",
+    "Please enter the CVV/CVC of your card": "Escribe el c\u00f3digo CVV/CVC de la tarjeta",
+    "Please enter the name on your credit card": "Escribe el titular de la tarjeta de cr\u00e9dito",
+    "Please enter your credit card number": "Escribe el n\u00famero de la tarjeta de cr\u00e9dito",
+    "Please enter your email address": "Escribe tu direcci\u00f3n de email",
+    "Please enter your first name": "Escribe tu nombre",
+    "Please enter your last name": "Escribe tus apellidos",
+    "Please enter your postal code": "Escribe tu c\u00f3digo postal",
+    "Please provide the email address issued to you by your educational institution.": "Facilita la direcci\u00f3n de correo electr\u00f3nico que tu instituci\u00f3n educativa te ha concedido.",
+    "Please select the country your credit card was issued": "Selecciona el pa\u00eds donde se emiti\u00f3 la tarjeta de cr\u00e9dito",
+    "Please select the month and year your credit card expires": "Por favor, selecciona el mes y el a\u00f1o en que caduca tu tarjeta de cr\u00e9dito",
+    "Please select the month your credit card expires": "Selecciona el mes en que caduca la tarjeta de cr\u00e9dito",
+    "Please select the year your credit card expires": "Selecciona el a\u00f1o en que caduca la tarjeta de cr\u00e9dito",
+    "Please select your occupation to help us build you a better experience": "Selecciona tu ocupaci\u00f3n para que podamos ofrecerte una mejor experiencia",
+    "Please use only numbers for dimensions": "Te recomendamos que solo uses n\u00fameros para las dimensiones",
+    "Presentations": "Presentaciones",
+    "Presenter view is available in the Prezi Next desktop app": "La vista del presentador est\u00e1 disponible en la app de escritorio de Prezi Next",
+    "Prezi": "Prezi",
+    "Prezi.com is missing a plugin required to work correctly. Click here to install Google Chrome Frame\u2026": "A Prezi.com le falta un plugin necesario para que pueda funcionar perfectamente. Haz clic aqu\u00ed para instalar Google Chrome Frame\u2026",
+    "Privacy level saved": "Nivel de privacidad guardado",
+    "Private": "Privado",
+    "Public": "P\u00fablico",
+    "Public&Reusable": "P\u00fablico y reutilizable",
+    "Rename unsuccessful": "Error al cambiar de nombre",
+    "Share prezi": "Compartir prezi",
+    "Shared with %(domain)s": "Compartido con %(domain)s",
+    "Shared with me": "Compartidos conmigo",
+    "Sharing didn't load. Please try again later.": "No se carg\u00f3 el archivo compartido. Vuelve a intentarlo pasados unos minutos.",
+    "Something went wrong": "Algo sali\u00f3 mal",
+    "Something went wrong, please try again later.": "Algo no sali\u00f3 bien. Prueba de nuevo pasados unos minutos.",
+    "That user is already in the member list": "Ese usuario ya est\u00e1 en la lista de miembros",
+    "The Prezi Remote is available in the Prezi Next desktop app": "Prezi Remote est\u00e1 disponible en la app de escritorio de Prezi Next",
+    "The desktop app gives you access to an arsenal of powerful presentation tools, including presentation download, offline presenting, presenter view, and more.": "La aplicaci\u00f3n de escritorio te da acceso a un arsenal de poderosas herramientas de presentaci\u00f3n, incluyendo descarga de presentaciones, presentaciones sin conexi\u00f3n, vista del presentador y muchas m\u00e1s.",
+    "This credit card is not supported": "Esta tarjeta de cr\u00e9dito no est\u00e1 admitida",
+    "This email is already taken.<br/>Try <a href=\"/login/\">logging in</a> instead?": "Este correo ya se est\u00e1 usando.<br/>Prueba a <a href=\"/login/\">identificarte</a>.",
+    "This person hasn't yet discovered Prezi.": "Esta persona a\u00fan no ha descubierto Prezi.",
+    "This prezi can be seen by the world on prezi.com/explore.": "Este prezi puede verlo el mundo entero en prezi.com/explore.",
+    "This prezi is publicly reusable.": "Este prezi es reutilizable p\u00fablicamente.",
+    "Try reloading the page or ": "Prueba a recargar la p\u00e1gina o ",
+    "Untitled folder": "Sin t\u00edtulo",
+    "User is already in the list": "Ya est\u00e1 en la lista este/a usuario/a",
+    "We failed to load your prezis list. Don't worry, all your presentations are still here!": "No conseguimos cargar la lista de tus prezis. \u00a1No te preocupes, todas tus presentaciones siguen aqu\u00ed!",
+    "You": "T\u00fa",
+    "You can save a copy<br/> of this prezi": "Puedes guardar una copia<br/> del prezi",
+    "checkbox": "casilla",
+    "click": "clic",
+    "contact us": "contacta con nosotros ",
+    "file": "archivo",
+    "folder name\u0004in": "en",
+    "image": "imagen",
+    "input": "insumo",
+    "password": "contrase\u00f1a",
+    "radio": "radio"
+  };
+  for (const key in newcatalog) {
+    django.catalog[key] = newcatalog[key];
+  }
+  
+
+  if (!django.jsi18n_initialized) {
+    django.gettext = function(msgid) {
+      const value = django.catalog[msgid];
+      if (typeof value === 'undefined') {
+        return msgid;
+      } else {
+        return (typeof value === 'string') ? value : value[0];
+      }
+    };
+
+    django.ngettext = function(singular, plural, count) {
+      const value = django.catalog[singular];
+      if (typeof value === 'undefined') {
+        return (count == 1) ? singular : plural;
+      } else {
+        return value.constructor === Array ? value[django.pluralidx(count)] : value;
+      }
+    };
+
+    django.gettext_noop = function(msgid) { return msgid; };
+
+    django.pgettext = function(context, msgid) {
+      let value = django.gettext(context + '\x04' + msgid);
+      if (value.includes('\x04')) {
+        value = msgid;
+      }
+      return value;
+    };
+
+    django.npgettext = function(context, singular, plural, count) {
+      let value = django.ngettext(context + '\x04' + singular, context + '\x04' + plural, count);
+      if (value.includes('\x04')) {
+        value = django.ngettext(singular, plural, count);
+      }
+      return value;
+    };
+
+    django.interpolate = function(fmt, obj, named) {
+      if (named) {
+        return fmt.replace(/%\(\w+\)s/g, function(match){return String(obj[match.slice(2,-2)])});
+      } else {
+        return fmt.replace(/%s/g, function(match){return String(obj.shift())});
+      }
+    };
+
+
+    /* formatting library */
+
+    django.formats = {
+    "DATETIME_FORMAT": "j \\d\\e F \\d\\e Y \\a \\l\\a\\s H:i",
+    "DATETIME_INPUT_FORMATS": [
+      "%d/%m/%Y %H:%M:%S",
+      "%d/%m/%Y %H:%M:%S.%f",
+      "%d/%m/%Y %H:%M",
+      "%d/%m/%y %H:%M:%S",
+      "%d/%m/%y %H:%M:%S.%f",
+      "%d/%m/%y %H:%M",
+      "%Y-%m-%d %H:%M:%S",
+      "%Y-%m-%d %H:%M:%S.%f",
+      "%Y-%m-%d %H:%M",
+      "%Y-%m-%d"
+    ],
+    "DATE_FORMAT": "j \\d\\e F \\d\\e Y",
+    "DATE_INPUT_FORMATS": [
+      "%d/%m/%Y",
+      "%d/%m/%y",
+      "%Y-%m-%d"
+    ],
+    "DECIMAL_SEPARATOR": ",",
+    "FIRST_DAY_OF_WEEK": 1,
+    "MONTH_DAY_FORMAT": "j \\d\\e F",
+    "NUMBER_GROUPING": 3,
+    "SHORT_DATETIME_FORMAT": "d/m/Y H:i",
+    "SHORT_DATE_FORMAT": "d/m/Y",
+    "THOUSAND_SEPARATOR": ".",
+    "TIME_FORMAT": "H:i",
+    "TIME_INPUT_FORMATS": [
+      "%H:%M:%S",
+      "%H:%M"
+    ],
+    "YEAR_MONTH_FORMAT": "F \\d\\e Y"
+  };
+
+    django.get_format = function(format_type) {
+      const value = django.formats[format_type];
+      if (typeof value === 'undefined') {
+        return format_type;
+      } else {
+        return value;
+      }
+    };
+
+    /* add to global namespace */
+    globals.pluralidx = django.pluralidx;
+    globals.gettext = django.gettext;
+    globals.ngettext = django.ngettext;
+    globals.gettext_noop = django.gettext_noop;
+    globals.pgettext = django.pgettext;
+    globals.npgettext = django.npgettext;
+    globals.interpolate = django.interpolate;
+    globals.get_format = django.get_format;
+
+    django.jsi18n_initialized = true;
+  }
+};
+

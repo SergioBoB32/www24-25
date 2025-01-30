@@ -1,0 +1,30 @@
+$( document ).ready(function() {
+    var accountSettingsLink = $('#account-settings');
+    accountSettingsLink.click(function (e) {
+        e.preventDefault();
+        window.glassboxLogger.logOpenAccountSettings();
+        window.open(accountSettingsLink.prop('href'), '_blank');
+    });
+    $('#dropdown-language-container').on('show.bs.dropdown', function () {
+        window.glassboxLogger.logOpenLanguageChooser();
+    });
+    var mobileAppsLink = $('#mobile-apps-link');
+    mobileAppsLink.click(function (e) {
+        e.preventDefault();
+        window.glassboxLogger.logOpenMobileAppsPage().finally(function () {
+            window.location = mobileAppsLink.prop('href');
+        });
+    });
+    $('#dropdown-help-container').on('show.bs.dropdown', function () {
+        window.glassboxLogger.logOpenHelpMenu();
+    });
+    $('#knowledge-base-dropdown-item').click(function () {
+        window.glassboxLogger.logOpenKnowledgeBase();
+    });
+    $('#workshop-training-dropdown-item').click(function () {
+        window.glassboxLogger.logOpenWorkshopAndTraining();
+    });
+    $('#support-dropdown-item').click(function () {
+        window.glassboxLogger.logOpenSupportPage();
+    });
+});

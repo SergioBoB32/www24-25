@@ -1,0 +1,51 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <title>El Joc Del Penjat</title>
+  </head>
+  <body onload="Inicialitzar()">
+    <header>
+      <h1>EL JOC DEL PENJAT</h1>
+    </header>
+    <main>
+      <div class="left">
+        <img
+          id="imagen"
+          class="imagen1"
+          src="../3.-El penjat/IMG/PENJAT/A0.png"
+          alt=""
+        />
+        <p class="palabra" id="palabra"></p>
+        <form id="formulario">
+          <input type="text" id="letra" placeholder="letra" />
+          <button class="boton" type="button" onclick="Enviar()">ENVIAR</button>
+        </form>
+
+        <p id="palabra_solucion"></p>
+        <br />
+
+        <div id="victoria">
+          <p id="fraseencert">!HAS GANADO!</p>
+          <img id="meme" src=".//IMG/PENJAT/ganador.jpg" alt="">
+          <button onclick="window.location.reolad()">Torna a jugar</button>
+        </div> 
+
+        <div id="derrota">
+          <p id="fraseerrada">!HAS PERDIDO!</p>
+          <img id="meme" src="./IMG/PENJAT/perdedor.jpg" alt="">
+          <button onclick="window.location.reolad()" id="buton">Torna a jugar</button>
+        </div>
+      </div>
+
+      <div class="right">
+        <p  class="titulo-centro">LLISTAT DE LLETRES</p>
+
+        <p class="llistat_lletres" id="llistat_lletres"></p>
+      </div>
+    </main>
+  </body>
+
+  <script src="./JS/penjat.js"></script>
+</html>

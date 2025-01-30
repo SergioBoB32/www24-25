@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <title>Document</title>
+  </head>
+  
+  <body>
+    <h1>A QUI TOCA ARA?</h1>
+    <div class="container3">
+      <p class="titulo-centro">LLISTAT DE JUGADORS</p>
+
+      <p class="jugadors" id="jugadors"></p>
+   </div>
+    <div class="container1">
+
+        <p class="titulo-izquierda">NOU JUGADOR</p>
+    
+        <form>
+          <input type="text" id="camp_nom" placeholder="El teu nom..."/>
+          <button class="boton" type="button" onclick="AfegirJugador()">AFEGIR</button>
+        </form>
+
+    </div>  
+      <br><br><br><br>
+    <div class="container2">
+        <form>
+            <h2 class="titulo3">ARA JUGA</h2>
+        
+            <p class="jugador_actual" id="jugador_actual"></p>
+            <br>
+            <button class="boton2" type="button" onclick="NextPlayer()">
+            SEGÜENT
+            </button>
+        </form>
+    </div>
+                                    
+    
+
+    
+    
+    
+    <script src="./JS/activitat.js"></script>
+  
+</body>
+</html>
