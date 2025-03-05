@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  body {
+    background: hsl(0, 0%, 98%);
+    margin: 4px;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 1500px;
+  }
+  header  p {
+    font-size: 36px;
+    font-weight: 200;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .texto-primero {
+    font-size: 16px;
+    color: hsl(229, 6%, 66%);
+    max-width: 540px;
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+     gap: 24px;
+     align-items: center;
+  }
+
+  .img {
+    align-items: flex-end;  
+    justify-content: flex-end;
+  }
+   h2 {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+p {
+    font-size: 12px;
+    color: hsl(229, 6%, 66%);
+  }
+  .container cuadro1 {
+    box-shadow: 10px 10px 15px rgba(4, 224, 224, 0.3);
+    grid-column: 1;
+    padding-left: 40px;
+    padding-top: 30px;
+    padding-right: 40px;
+    grid-row: 1 / span 2;
+    min-height: 220px;
+    border-radius: 5px;
+    border-top: 3px solid rgb(8, 218, 172); 
+  }
+
+  .container cuadro2 {
+    box-shadow: 10px 10px 15px rgba(241, 4, 4, 0.3);
+    grid-column: 2;
+    padding-left: 40px;
+    padding-top: 30px;
+    padding-right: 40px;
+    min-height: 220px;  
+    border-radius: 5px;
+    border-top: 3px solid rgb(211, 10, 10); 
+  }
+
+  .container cuadro3 {
+    box-shadow: 10px 10px 15px rgba(224, 92, 4, 0.3);
+    min-height: 220px;
+    padding-left: 40px;
+    padding-top: 30px;
+    padding-right: 40px;
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    border-radius: 5px;
+    border-top: 3px solid rgb(219, 77, 11);  
+  }
+
+  .container cuadro4 {
+    
+    box-shadow: 10px 10px 15px rgba(4, 19, 224, 0.3);
+    grid-column: 2;
+    padding-left: 40px;
+    padding-top: 30px;
+    padding-right: 40px;
+    min-height: 220px;
+    border-radius: 5px;
+    border-top: 3px solid rgb(13, 118, 216); 
+  }
+
+  .img{
+    margin-top: 24px;
+    text-align: right;
+  }
+
+  @media (max-width: 375px) {
+    body {
+      
+      height: auto;
+      margin: 48px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+    .container article {
+      width: 100%;
+    }
+  }
